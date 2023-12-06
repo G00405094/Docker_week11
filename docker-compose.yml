@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: week4a:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - my_network
+
+  confirmation-service:
+    image: week4b:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
